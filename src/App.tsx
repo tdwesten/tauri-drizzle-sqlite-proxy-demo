@@ -4,14 +4,11 @@ import drizzleLogo from "./assets/drizzle.svg";
 import reactLogo from "./assets/react.svg";
 
 import { db } from "./db/database";
-import { migrate } from "./db/migrate";
 import * as schema from "./db/schema";
 
 function App() {
   const [name, setName] = useState("");
   const [users, setUsers] = useState<{ id: number; name: string | null }[]>([]);
-
-  migrate();
 
   async function addUser() {
     await db.insert(schema.users).values({ name });
@@ -63,6 +60,7 @@ function App() {
         <input
           id="greet-input"
           onChange={(e) => setName(e.currentTarget.value)}
+          value={name}
           placeholder="Enter a name..."
         />
         <button type="submit">Add name to the db</button>
