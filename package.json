@@ -1,5 +1,6 @@
 {
   "name": "tauri-drizzle-sqlite-proxy-demo",
+  "description": "A Tauri app with a React front-end and a SQLite database using Drizzle ORM",
   "private": true,
   "version": "0.0.0",
   "type": "module",
