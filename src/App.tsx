@@ -29,7 +29,7 @@ function App() {
       .findMany()
       .execute()
       .then((results) => {
-        console.log("🚀 ~ .then ~ results:", results);
+        console.log("🚀 ~ FindMany response from Drizzle:", results);
         setUsers(results);
       });
   };
@@ -39,7 +39,7 @@ function App() {
       .findFirst()
       .execute()
       .then((result) => {
-        console.log("🚀 ~ .then ~ result:", result);
+        console.log("🚀 ~ FindFirst response from Drizzle:", result);
       });
   };
 

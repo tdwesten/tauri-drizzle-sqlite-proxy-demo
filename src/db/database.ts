@@ -28,6 +28,7 @@ export const db = drizzle<typeof schema>(
         console.error("SQL Error:", e);
         return [];
       });
+      console.log("🚀 ~ Raw response from proxy:", rows);
     } else {
       // Otherwise, use the execute method
       rows = await sqlite.execute(sql, params).catch((e) => {
@@ -36,8 +37,6 @@ export const db = drizzle<typeof schema>(
       });
       return { rows: [] };
     }
-
-    rows = rows.map((row: any) => Object.values(row));
 
     // If the method is "all", return all rows
     results = method === "all" ? rows : rows[0];
@@ -48,7 +47,7 @@ export const db = drizzle<typeof schema>(
     };
   },
   // Pass the schema to the drizzle instance
-  { schema: schema }
+  { schema: schema, logger: true }
 );
 
 /**
