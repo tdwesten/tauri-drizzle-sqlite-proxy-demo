@@ -34,7 +34,10 @@ export const db = drizzle<typeof schema>(
         console.error("SQL Error:", e);
         return [];
       });
+      return { rows: [] };
     }
+
+    rows = rows.map((row: any) => Object.values(row));
 
     // If the method is "all", return all rows
     results = method === "all" ? rows : rows[0];

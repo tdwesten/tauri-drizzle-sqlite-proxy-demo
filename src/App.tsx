@@ -19,6 +19,7 @@ function App() {
   useEffect(() => {
     async function init() {
       loadUsers();
+      loadASingleUser();
     }
     init();
   }, []);
@@ -28,7 +29,17 @@ function App() {
       .findMany()
       .execute()
       .then((results) => {
+        console.log("🚀 ~ .then ~ results:", results);
         setUsers(results);
+      });
+  };
+
+  const loadASingleUser = async () => {
+    db.query.users
+      .findFirst()
+      .execute()
+      .then((result) => {
+        console.log("🚀 ~ .then ~ result:", result);
       });
   };
 
