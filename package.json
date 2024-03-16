@@ -12,20 +12,20 @@
     "migrate": "drizzle-kit generate:sqlite"
   },
   "dependencies": {
-    "@tauri-apps/api": "^1.5.2",
-    "drizzle-orm": "^0.29.3",
+    "@tauri-apps/api": "^1.5.3",
+    "drizzle-orm": "^0.30.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tauri-plugin-sql-api": "https://github.com/tauri-apps/tauri-plugin-sql#v1"
   },
   "devDependencies": {
-    "@tauri-apps/cli": "^1.5.8",
-    "@types/react": "^18.2.15",
-    "@types/react-dom": "^18.2.7",
+    "@tauri-apps/cli": "^1.5.11",
+    "@types/react": "^18.2.66",
+    "@types/react-dom": "^18.2.22",
     "@vitejs/plugin-react": "^4.2.1",
-    "typescript": "^5.0.2",
-    "vite": "^5.0.0",
-    "drizzle-kit": "^0.20.8",
-    "tsx": "^4.7.0"
+    "typescript": "^5.4.2",
+    "vite": "^5.1.6",
+    "drizzle-kit": "^0.20.14",
+    "tsx": "^4.7.1"
   }
 }
